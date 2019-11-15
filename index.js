@@ -60,3 +60,22 @@ myCard.getImageUrl()
 // ------------------------------------------------------------------------------------------
 
 // Hand constructor exercise
+
+class Hand {
+    constructor(point, suit) {
+        this.point = point,
+        this.suit = suit
+    }
+    addCard () {
+        
+    }
+    getPoints () {
+
+    }
+}
+
+// Get the following to work
+var myHand = new Hand()
+myHand.addCard(new Card(5, 'diamonds'))
+myHand.addCard(new Card(13, 'spades'))
+myHand.getPoints()
