@@ -68,24 +68,67 @@ class Card {
 // ------------------------------------------------------------------------------------------
 
 // Hand constructor exercise
-class Hand extends Card {
-    constructor(point, suit) {
-        super(point, suit)
-        this.hand = []
-    }
-    addCard (card) {
-        this.hand.push(card)
-        console.log(card.point + ' of ' + card.suit + ' was added to your hand')
-    }
-    getPoints () {
-        const pointArray = this.hand.map((x)=> x.point)
-        console.log('Total points: ',(pointArray.reduce((a,b)=> a+b)))
-    }
+// class Hand extends Card {
+//     constructor(point, suit) {
+//         super(point, suit)
+//         this.hand = []
+//     }
+//     addCard (card) {
+//         this.hand.push(card)
+//         console.log(card.point + ' of ' + card.suit + ' was added to your hand')
+//     }
+//     getPoints () {
+//         const pointArray = this.hand.map((x)=> x.point)
+//         console.log('Total points: ',(pointArray.reduce((a,b)=> a+b)))
+//     }
+// }
+
+class Hand {
+  constructor() {
+      this.hand = []
+  }
+  addCard (card) {
+      this.hand.push(card)
+      console.log(card.point + ' of ' + card.suit + ' was added to your hand')
+  }
+  getPoints () {
+      const pointArray = this.hand.map((x)=> x.point)
+      console.log('Total points: ',(pointArray.reduce((a,b)=> a+b)))
+  }
 }
 
 // Get the following to work
 var myHand = new Hand()
+console.log('This is my current hand: ', myHand)
 myHand.addCard(new Card(5, 'diamonds'))
 myHand.addCard(new Card(13, 'spades'))
+console.log('This is my current hand: ', myHand)
 myHand.getPoints()
 
+// ------------------------------------------------------------------------------------------
+
+// Deck constructor exercise
+class Deck {
+  constructor(
+
+  )
+  draw () {
+    // returns one card in your hand
+  }
+  shuffle () {
+    // shuffles all cards in the deck
+  }
+  numCardsLeft () {
+
+  }
+}
+
+// Get the following to work
+var myDeck = new Deck()
+myDeck.draw()
+// Card {point: 6, suit: "clubs"}
+myDeck.draw()
+// Card {point: 1, suit: "spades"}
+myDeck.shuffle()
+myDeck.numCardsLeft()
+// 50
