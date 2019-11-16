@@ -75,12 +75,11 @@ class Hand extends Card {
     }
     addCard (card) {
         this.hand.push(card)
-        console.log('Your new hand: ', this.hand)
+        console.log(card.point + ' of ' + card.suit + ' was added to your hand')
     }
     getPoints () {
-        console.log('getting points...', this)
         const pointArray = this.hand.map((x)=> x.point)
-        console.log(pointArray.reduce((a,b)=> a+b))
+        console.log('Total points: ',(pointArray.reduce((a,b)=> a+b)))
     }
 }
 
@@ -89,3 +88,4 @@ var myHand = new Hand()
 myHand.addCard(new Card(5, 'diamonds'))
 myHand.addCard(new Card(13, 'spades'))
 myHand.getPoints()
+
