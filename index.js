@@ -8,6 +8,12 @@ class Person {
     greet(otherPerson) {
       console.log('Hello ' + otherPerson.name + ', I am ' + this.name + '!');
     }
+    printInfo() {
+      console.log({
+        Email: this.email,
+        Phone: this.phone
+      })
+    }
   }
 
 // EX 1
@@ -19,11 +25,13 @@ sonny.greet(jordan)
 // EX 4
 jordan.greet(sonny)
 // EX 5
-const sonnyContactInfo = 'Sonny Email: ' + sonny.email + ' Sonny Phone: ' + sonny.phone
-console.log(sonnyContactInfo)
+// const sonnyContactInfo = 'Sonny Email: ' + sonny.email + ' Sonny Phone: ' + sonny.phone
+// console.log(sonnyContactInfo)
+sonny.printInfo()
 // EX 6
-const jordanContactInfo = 'Jordan Email: ' + jordan.email + ' Jordan Phone: ' + jordan.phone
-console.log(jordanContactInfo)
+// const jordanContactInfo = 'Jordan Email: ' + jordan.email + ' Jordan Phone: ' + jordan.phone
+// console.log(jordanContactInfo)
+jordan.printInfo()
 
 // ------------------------------------------------------------------------------------------
 
