@@ -1,37 +1,37 @@
-// Person exercise
-class Person {
-    constructor(name, email, phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
-    greet(otherPerson) {
-      console.log('Hello ' + otherPerson.name + ', I am ' + this.name + '!');
-    }
-    printInfo() {
-      console.log({
-        Email: this.email,
-        Phone: this.phone
-      })
-    }
-  }
+// // Person exercise
+// class Person {
+//     constructor(name, email, phone) {
+//         this.name = name;
+//         this.email = email;
+//         this.phone = phone;
+//     }
+//     greet(otherPerson) {
+//       console.log('Hello ' + otherPerson.name + ', I am ' + this.name + '!');
+//     }
+//     printInfo() {
+//       console.log({
+//         Email: this.email,
+//         Phone: this.phone
+//       })
+//     }
+//   }
 
-// EX 1
-  let sonny = new Person('Sonny', 'sonny@hotmail.com', '483-485-4948');
-// EX 1
-  let jordan = new Person('Jordan', 'jordan@aol.com', '495-586-3456');
-// EX 3
-sonny.greet(jordan)
-// EX 4
-jordan.greet(sonny)
-// EX 5
-// const sonnyContactInfo = 'Sonny Email: ' + sonny.email + ' Sonny Phone: ' + sonny.phone
-// console.log(sonnyContactInfo)
-sonny.printInfo()
-// EX 6
-// const jordanContactInfo = 'Jordan Email: ' + jordan.email + ' Jordan Phone: ' + jordan.phone
-// console.log(jordanContactInfo)
-jordan.printInfo()
+// // EX 1
+//   let sonny = new Person('Sonny', 'sonny@hotmail.com', '483-485-4948');
+// // EX 1
+//   let jordan = new Person('Jordan', 'jordan@aol.com', '495-586-3456');
+// // EX 3
+// sonny.greet(jordan)
+// // EX 4
+// jordan.greet(sonny)
+// // EX 5
+// // const sonnyContactInfo = 'Sonny Email: ' + sonny.email + ' Sonny Phone: ' + sonny.phone
+// // console.log(sonnyContactInfo)
+// sonny.printInfo()
+// // EX 6
+// // const jordanContactInfo = 'Jordan Email: ' + jordan.email + ' Jordan Phone: ' + jordan.phone
+// // console.log(jordanContactInfo)
+// jordan.printInfo()
 
 // ------------------------------------------------------------------------------------------
 
@@ -62,23 +62,25 @@ class Card {
     }
 }
 
-let myCard = new Card(5, 'diamonds')
-myCard.getImageUrl()
+// let myCard = new Card(5, 'diamonds')
+// myCard.getImageUrl()
 
 // ------------------------------------------------------------------------------------------
 
 // Hand constructor exercise
-
-class Hand {
+class Hand extends Card {
     constructor(point, suit) {
-        this.point = point,
-        this.suit = suit
+        super(point, suit)
+        this.hand = []
     }
-    addCard () {
-        
+    addCard (card) {
+        this.hand.push(card)
+        console.log('Your new hand: ', this.hand)
     }
     getPoints () {
-
+        console.log('getting points...', this)
+        const pointArray = this.hand.map((x)=> x.point)
+        console.log(pointArray.reduce((a,b)=> a+b))
     }
 }
 
