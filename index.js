@@ -110,7 +110,7 @@ myHand.getPoints()
 // Deck constructor exercise
 class Deck {
   constructor(
-
+  
   )
   draw () {
     // returns one card in your hand
@@ -119,7 +119,7 @@ class Deck {
     // shuffles all cards in the deck
   }
   numCardsLeft () {
-
+    // number of cards in deck
   }
 }
 
