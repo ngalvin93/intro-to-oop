@@ -98,12 +98,12 @@ class Hand {
 }
 
 // Get the following to work
-var myHand = new Hand()
-console.log('This is my current hand: ', myHand)
-myHand.addCard(new Card(5, 'diamonds'))
-myHand.addCard(new Card(13, 'spades'))
-console.log('This is my current hand: ', myHand)
-myHand.getPoints()
+// var myHand = new Hand()
+// console.log('This is my current hand: ', myHand)
+// myHand.addCard(new Card(5, 'diamonds'))
+// myHand.addCard(new Card(13, 'spades'))
+// console.log('This is my current hand: ', myHand)
+// myHand.getPoints()
 
 // ------------------------------------------------------------------------------------------
 
@@ -120,12 +120,10 @@ class Deck extends Hand {
     this.hand = hand
   }
   draw () {
-    // returns one card in your hand
     let randomCard = this.hand[Math.floor(Math.random() * this.hand.length)]
     console.log('You drew this card: ', randomCard)
   }
   shuffle () {
-    // shuffles all cards in the deck
     for (var i = this.hand.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = this.hand[i];
@@ -133,7 +131,6 @@ class Deck extends Hand {
       this.hand[j] = temp;
   }
     console.log('Shuffled hand: ', this.hand)
-    console.log('Temp: ', temp)
   }
 
   numCardsLeft () {
@@ -145,11 +142,8 @@ class Deck extends Hand {
 var myDeck = new Deck()
 myDeck.draw()
 // Card {point: 6, suit: "clubs"}
-// myDeck.draw()
+myDeck.draw()
 // Card {point: 1, suit: "spades"}
 myDeck.shuffle()
 myDeck.numCardsLeft()
 // 50
-
-// Code below
-console.log('This is my deck: ', myDeck.hand)
