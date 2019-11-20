@@ -108,18 +108,36 @@ myHand.getPoints()
 // ------------------------------------------------------------------------------------------
 
 // Deck constructor exercise
-class Deck {
-  constructor(
-  
-  )
+class Deck extends Hand {
+  constructor (hand = [
+    {point: 6, suit: "club"},
+    {point: 8, suit: "heart"},
+    {point: 3, suit: "spade"},
+    {point: 2, suit: "clover"},
+    {point: 10, suit: "heart"}
+  ]) {
+    super(hand)
+    this.hand = hand
+  }
   draw () {
     // returns one card in your hand
+    let randomCard = this.hand[Math.floor(Math.random() * this.hand.length)]
+    console.log('You drew this card: ', randomCard)
   }
   shuffle () {
     // shuffles all cards in the deck
+    for (var i = this.hand.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = this.hand[i];
+      this.hand[i] = this.hand[j];
+      this.hand[j] = temp;
   }
+    console.log('Shuffled hand: ', this.hand)
+    console.log('Temp: ', temp)
+  }
+
   numCardsLeft () {
-    // number of cards in deck
+    console.log('Number of cards left in deck: ', this.hand.length)
   }
 }
 
@@ -127,8 +145,11 @@ class Deck {
 var myDeck = new Deck()
 myDeck.draw()
 // Card {point: 6, suit: "clubs"}
-myDeck.draw()
+// myDeck.draw()
 // Card {point: 1, suit: "spades"}
 myDeck.shuffle()
 myDeck.numCardsLeft()
 // 50
+
+// Code below
+console.log('This is my deck: ', myDeck.hand)
